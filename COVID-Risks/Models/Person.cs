@@ -9,11 +9,11 @@ namespace WinFormsApp1.Models
 {
     public class Person
     {
-        public Person( string? fio, int age, string? group, string? akanam, string? somanam, 
-            string? pregnancythreatStatus, string? edemaStatus, string? preeclampsiaStatus, 
-            string? anemiaStatus, string? infectionStatus, string? gravidogramStatus, 
-            string? bloodflowStatus, string? fetusStatus, string? feverStatus, string? coughStatus, 
-            string? dyspneaStatus, string? hemodynamicsStatus, string? saturationStatus, 
+        public Person(string? fio, int age, string? group, string? akanam, string? somanam,
+            string? pregnancythreatStatus, string? edemaStatus, string? preeclampsiaStatus,
+            string? anemiaStatus, string? infectionStatus, string? gravidogramStatus,
+            string? bloodflowStatus, string? fetusStatus, string? feverStatus, string? coughStatus,
+            string? dyspneaStatus, string? hemodynamicsStatus, string? saturationStatus,
             string? nauseaStatus, string? lungtissueStatus)
         {
             Age = age;
@@ -36,7 +36,9 @@ namespace WinFormsApp1.Models
             SaturationStatus = saturationStatus;
             NauseaStatus = nauseaStatus;
             LungtissueStatus = lungtissueStatus;
+            
         }
+
 
         public int Age { get; set; }
         public string? Fio { get; set; }
@@ -59,6 +61,6 @@ namespace WinFormsApp1.Models
         public string? NauseaStatus { get; set; }
         public string? LungtissueStatus { get; set; }
 
-        public static List<Person> personlist= new List<Person>();
+        public static List<Person> personlist = new List<Person>();
     }
 }

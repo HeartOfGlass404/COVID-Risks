@@ -28,208 +28,235 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("ФИО");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Возраст");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Группа риска");
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.LoadButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.PersonList = new System.Windows.Forms.ListView();
-            this.FIOColumn = new System.Windows.Forms.ColumnHeader();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.PersonView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            toolStrip1 = new ToolStrip();
+            FileMenuButton = new ToolStripDropDownButton();
+            OpenButton = new ToolStripMenuItem();
+            SaveMenuButton = new ToolStripMenuItem();
+            сохранитьКакToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            EditMenuButton = new ToolStripDropDownButton();
+            AddButton = new ToolStripMenuItem();
+            DeleteButton = new ToolStripMenuItem();
+            изменитьЗаписьToolStripMenuItem = new ToolStripMenuItem();
+            HelpMenuButton = new ToolStripButton();
+            personBindingSource = new BindingSource(components);
+            PersonList = new ListView();
+            FIOColumn = new ColumnHeader();
+            PersonView1 = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            splitContainer1 = new SplitContainer();
+            flowLayoutPanel1.SuspendLayout();
+            toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.LoadButton);
-            this.flowLayoutPanel1.Controls.Add(this.AddButton);
-            this.flowLayoutPanel1.Controls.Add(this.DeleteButton);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 31);
-            this.flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.Controls.Add(toolStrip1);
+            flowLayoutPanel1.Dock = DockStyle.Top;
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(800, 31);
+            flowLayoutPanel1.TabIndex = 0;
             // 
-            // LoadButton
+            // toolStrip1
             // 
-            this.LoadButton.Location = new System.Drawing.Point(3, 3);
-            this.LoadButton.Name = "LoadButton";
-            this.LoadButton.Size = new System.Drawing.Size(167, 29);
-            this.LoadButton.TabIndex = 0;
-            this.LoadButton.Text = "Загрузить список";
-            this.LoadButton.UseVisualStyleBackColor = true;
-            this.LoadButton.Click += new System.EventHandler(this.button1_Click);
+            toolStrip1.ImageScalingSize = new Size(20, 20);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { FileMenuButton, toolStripSeparator1, EditMenuButton, HelpMenuButton });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(155, 27);
+            toolStrip1.TabIndex = 0;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // FileMenuButton
+            // 
+            FileMenuButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            FileMenuButton.DropDownItems.AddRange(new ToolStripItem[] { OpenButton, SaveMenuButton, сохранитьКакToolStripMenuItem });
+            FileMenuButton.Image = (Image)resources.GetObject("FileMenuButton.Image");
+            FileMenuButton.ImageTransparentColor = Color.Magenta;
+            FileMenuButton.Name = "FileMenuButton";
+            FileMenuButton.Size = new Size(34, 24);
+            FileMenuButton.Text = "Файл";
+            // 
+            // OpenButton
+            // 
+            OpenButton.Name = "OpenButton";
+            OpenButton.Size = new Size(224, 26);
+            OpenButton.Text = "Открыть";
+            OpenButton.Click += OpenButton_Click;
+            // 
+            // SaveMenuButton
+            // 
+            SaveMenuButton.Name = "SaveMenuButton";
+            SaveMenuButton.Size = new Size(224, 26);
+            SaveMenuButton.Text = "Сохранить";
+            SaveMenuButton.Click += SaveMenuButton_Click;
+            // 
+            // сохранитьКакToolStripMenuItem
+            // 
+            сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
+            сохранитьКакToolStripMenuItem.Size = new Size(224, 26);
+            сохранитьКакToolStripMenuItem.Text = "Сохранить как...";
+            сохранитьКакToolStripMenuItem.Click += SaveAsMenuButton_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 27);
+            // 
+            // EditMenuButton
+            // 
+            EditMenuButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            EditMenuButton.DropDownItems.AddRange(new ToolStripItem[] { AddButton, DeleteButton, изменитьЗаписьToolStripMenuItem });
+            EditMenuButton.Image = (Image)resources.GetObject("EditMenuButton.Image");
+            EditMenuButton.ImageTransparentColor = Color.Magenta;
+            EditMenuButton.Name = "EditMenuButton";
+            EditMenuButton.Size = new Size(34, 24);
+            EditMenuButton.Text = "Редактировать";
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(176, 3);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(94, 29);
-            this.AddButton.TabIndex = 1;
-            this.AddButton.Text = "Добавить";
-            this.AddButton.UseVisualStyleBackColor = true;
+            AddButton.Name = "AddButton";
+            AddButton.Size = new Size(213, 26);
+            AddButton.Text = "Добавить запись";
+            AddButton.Click += AddButton_Click;
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(276, 3);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(94, 29);
-            this.DeleteButton.TabIndex = 2;
-            this.DeleteButton.Text = "Удалить";
-            this.DeleteButton.UseVisualStyleBackColor = true;
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Size = new Size(213, 26);
+            DeleteButton.Text = "Удалить запись";
+            DeleteButton.Click += DeleteButton_Click;
             // 
-            // splitContainer1
+            // изменитьЗаписьToolStripMenuItem
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 31);
-            this.splitContainer1.Name = "splitContainer1";
+            изменитьЗаписьToolStripMenuItem.Name = "изменитьЗаписьToolStripMenuItem";
+            изменитьЗаписьToolStripMenuItem.Size = new Size(213, 26);
+            изменитьЗаписьToolStripMenuItem.Text = "Изменить запись";
             // 
-            // splitContainer1.Panel1
+            // HelpMenuButton
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.PersonList);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 420);
-            this.splitContainer1.SplitterDistance = 265;
-            this.splitContainer1.SplitterWidth = 5;
-            this.splitContainer1.TabIndex = 1;
-            // 
-            // PersonList
-            // 
-            this.PersonList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.FIOColumn});
-            this.PersonList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PersonList.GridLines = true;
-            this.PersonList.Location = new System.Drawing.Point(0, 0);
-            this.PersonList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PersonList.Name = "PersonList";
-            this.PersonList.Size = new System.Drawing.Size(265, 420);
-            this.PersonList.TabIndex = 0;
-            this.PersonList.UseCompatibleStateImageBehavior = false;
-            this.PersonList.View = System.Windows.Forms.View.Details;
-            this.PersonList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.PersonList_ItemSelectionChanged);
-            this.PersonList.SelectedIndexChanged += new System.EventHandler(this.PersonList_SelectedIndexChanged);
-            // 
-            // FIOColumn
-            // 
-            this.FIOColumn.Text = "Пациенты";
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.PersonView1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.treeView1);
-            this.splitContainer2.Size = new System.Drawing.Size(530, 420);
-            this.splitContainer2.SplitterDistance = 109;
-            this.splitContainer2.TabIndex = 0;
-            this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
-            // 
-            // PersonView1
-            // 
-            this.PersonView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.PersonView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PersonView1.GridLines = true;
-            this.PersonView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
-            this.PersonView1.Location = new System.Drawing.Point(0, 0);
-            this.PersonView1.Name = "PersonView1";
-            this.PersonView1.Scrollable = false;
-            this.PersonView1.Size = new System.Drawing.Size(530, 109);
-            this.PersonView1.TabIndex = 0;
-            this.PersonView1.UseCompatibleStateImageBehavior = false;
-            this.PersonView1.View = System.Windows.Forms.View.Details;
-            this.PersonView1.SelectedIndexChanged += new System.EventHandler(this.PersonView1_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "";
-            // 
-            // treeView1
-            // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(530, 307);
-            this.treeView1.TabIndex = 0;
+            HelpMenuButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            HelpMenuButton.Image = (Image)resources.GetObject("HelpMenuButton.Image");
+            HelpMenuButton.ImageTransparentColor = Color.Magenta;
+            HelpMenuButton.Name = "HelpMenuButton";
+            HelpMenuButton.Size = new Size(29, 24);
+            HelpMenuButton.Text = "Помощь";
             // 
             // personBindingSource
             // 
-            this.personBindingSource.DataSource = typeof(WinFormsApp1.Models.Person);
+            personBindingSource.DataSource = typeof(WinFormsApp1.Models.Person);
+            // 
+            // PersonList
+            // 
+            PersonList.Columns.AddRange(new ColumnHeader[] { FIOColumn });
+            PersonList.DataBindings.Add(new Binding("DataContext", personBindingSource, "Fio", true));
+            PersonList.Dock = DockStyle.Fill;
+            PersonList.GridLines = true;
+            PersonList.Location = new Point(0, 0);
+            PersonList.Margin = new Padding(3, 4, 3, 4);
+            PersonList.Name = "PersonList";
+            PersonList.Size = new Size(265, 420);
+            PersonList.TabIndex = 0;
+            PersonList.UseCompatibleStateImageBehavior = false;
+            PersonList.View = View.Details;
+            PersonList.SelectedIndexChanged += PersonList_SelectedIndexChanged;
+            // 
+            // FIOColumn
+            // 
+            FIOColumn.Text = "Пациенты";
+            FIOColumn.Width = 261;
+            // 
+            // PersonView1
+            // 
+            PersonView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            PersonView1.Dock = DockStyle.Fill;
+            PersonView1.GridLines = true;
+            PersonView1.Location = new Point(0, 0);
+            PersonView1.Name = "PersonView1";
+            PersonView1.Size = new Size(530, 420);
+            PersonView1.TabIndex = 0;
+            PersonView1.UseCompatibleStateImageBehavior = false;
+            PersonView1.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "";
+            columnHeader1.Width = 250;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "";
+            columnHeader2.Width = 250;
+            // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(0, 31);
+            splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(PersonList);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(PersonView1);
+            splitContainer1.Size = new Size(800, 420);
+            splitContainer1.SplitterDistance = 265;
+            splitContainer1.SplitterWidth = 5;
+            splitContainer1.TabIndex = 1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 451);
-            this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form1";
-            this.Text = "Covid-Risk";
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 451);
+            Controls.Add(splitContainer1);
+            Controls.Add(flowLayoutPanel1);
+            Name = "Form1";
+            Text = "Covid-Risk";
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)personBindingSource).EndInit();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
 
         private FlowLayoutPanel flowLayoutPanel1;
-        private SplitContainer splitContainer1;
         private BindingSource personBindingSource;
-        private Button LoadButton;
+        private ToolStrip toolStrip1;
+        private ToolStripDropDownButton FileMenuButton;
+        private ToolStripMenuItem OpenButton;
+        private ToolStripMenuItem SaveMenuButton;
+        private ToolStripMenuItem сохранитьКакToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripDropDownButton EditMenuButton;
+        private ToolStripMenuItem AddButton;
+        private ToolStripMenuItem DeleteButton;
+        private ToolStripMenuItem изменитьЗаписьToolStripMenuItem;
+        private ToolStripButton HelpMenuButton;
         private ListView PersonList;
         private ColumnHeader FIOColumn;
-        private Button AddButton;
-        private Button DeleteButton;
-        private SplitContainer splitContainer2;
         private ListView PersonView1;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
-        private TreeView treeView1;
+        private SplitContainer splitContainer1;
     }
 }

@@ -14,23 +14,7 @@ namespace COVID_Risks
             Application.Run(new Form1());
 
 
-            try
-            {
-                using (Models.ExcelHelper helper = new Models.ExcelHelper())
-                {
-                    if (helper.Open(_filePath: Path.Combine(Environment.CurrentDirectory, "testinput.xlsx")))
-                    {
-                        helper.Set(collumn:"A", row: 1, data: "asdasdasd");
-
-                        helper.Save();
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-
-                Console.WriteLine(e.Message);
-            }
+           
         }
     }
 }
